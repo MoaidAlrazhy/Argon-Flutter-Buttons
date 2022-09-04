@@ -72,8 +72,7 @@ class ArgonButton extends StatefulWidget {
         assert(focusElevation == null || focusElevation >= 0.0),
         assert(hoverElevation == null || hoverElevation >= 0.0),
         assert(highlightElevation == null || highlightElevation >= 0.0),
-        assert(disabledElevation == null || disabledElevation >= 0.0),
-        assert(clipBehavior != null);
+        assert(disabledElevation == null || disabledElevation >= 0.0);
 
   @override
   _ArgonButtonState createState() => _ArgonButtonState();
@@ -171,25 +170,18 @@ class _ArgonButtonState extends State<ArgonButton>
                   widget.borderRadius, widget.height / 2, _animation.value)!
               : widget.borderRadius),
         ),
-        child: RaisedButton(
+        child: ElevatedButton(
             key: _buttonKey,
-            color: widget.color,
-            focusColor: widget.focusColor,
-            hoverColor: widget.hoverColor,
-            highlightColor: widget.highlightColor,
-            splashColor: widget.splashColor,
-            colorBrightness: widget.colorBrightness,
-            elevation: widget.elevation,
-            focusElevation: widget.focusElevation,
-            hoverElevation: widget.hoverElevation,
-            highlightElevation: widget.highlightElevation,
-            padding: widget.padding,
+            style: ElevatedButton.styleFrom(
+              textStyle: TextStyle(color: widget.color),
+              elevation: widget.elevation,
+              padding: widget.padding,
+              disabledBackgroundColor: widget.disabledColor,
+              disabledForegroundColor: widget.disabledTextColor,
+            ),
             clipBehavior: widget.clipBehavior,
             focusNode: widget.focusNode,
-            materialTapTargetSize: widget.materialTapTargetSize,
-            disabledElevation: widget.disabledElevation,
-            disabledColor: widget.disabledColor,
-            disabledTextColor: widget.disabledTextColor,
+
             onPressed: () {
               widget.onTap!(
                   () => animateForward(), () => animateReverse(), btn);
@@ -268,8 +260,7 @@ class ArgonTimerButton extends StatefulWidget {
         assert(focusElevation == null || focusElevation >= 0.0),
         assert(hoverElevation == null || hoverElevation >= 0.0),
         assert(highlightElevation == null || highlightElevation >= 0.0),
-        assert(disabledElevation == null || disabledElevation >= 0.0),
-        assert(clipBehavior != null);
+        assert(disabledElevation == null || disabledElevation >= 0.0);
 
   @override
   _ArgonTimerButtonState createState() => _ArgonTimerButtonState();
@@ -406,24 +397,16 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton>
                   widget.borderRadius, widget.height / 2, _animation.value)!
               : widget.borderRadius),
         ),
-        child: RaisedButton(
-            color: widget.color,
-            focusColor: widget.focusColor,
-            hoverColor: widget.hoverColor,
-            highlightColor: widget.highlightColor,
-            splashColor: widget.splashColor,
-            colorBrightness: widget.colorBrightness,
-            elevation: widget.elevation,
-            focusElevation: widget.focusElevation,
-            hoverElevation: widget.hoverElevation,
-            highlightElevation: widget.highlightElevation,
-            padding: widget.padding,
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              textStyle: TextStyle(color: widget.color),
+              elevation: widget.elevation,
+              padding: widget.padding,
+              disabledBackgroundColor: widget.disabledColor,
+              disabledForegroundColor: widget.disabledTextColor,
+            ),
             clipBehavior: widget.clipBehavior,
             focusNode: widget.focusNode,
-            materialTapTargetSize: widget.materialTapTargetSize,
-            disabledElevation: widget.disabledElevation,
-            disabledColor: widget.disabledColor,
-            disabledTextColor: widget.disabledTextColor,
             onPressed: () {
               widget.onTap!((newCounter) => startTimer(newCounter), btn);
             },
