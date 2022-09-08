@@ -200,6 +200,7 @@ class ArgonTimerButton extends StatefulWidget {
   final Widget child;
   final Function(Function startTimer, ButtonState? btnState)? onTap;
   final Color? color;
+  final Color? textColor;
   final Color? focusColor;
   final Color? hoverColor;
   final Color? highlightColor;
@@ -232,6 +233,7 @@ class ArgonTimerButton extends StatefulWidget {
       required this.child,
       this.onTap,
       this.color,
+      this.textColor,
       this.focusColor,
       this.hoverColor,
       this.highlightColor,
@@ -391,7 +393,8 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton> with TickerProvider
         ),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              textStyle: TextStyle(color: widget.color),
+              backgroundColor: widget.color,
+              foregroundColor: widget.textColor,
               elevation: widget.elevation,
               padding: widget.padding,
               disabledBackgroundColor: widget.disabledColor,
