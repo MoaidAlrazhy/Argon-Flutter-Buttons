@@ -391,14 +391,15 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton> with TickerProvider
               ? lerpDouble(widget.borderRadius, widget.height / 2, _animation.value)!
               : widget.borderRadius),
         ),
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
+        child: TextButton(
+            style: TextButton.styleFrom(
               backgroundColor: widget.color,
               foregroundColor: widget.textColor,
               elevation: widget.elevation,
               padding: widget.padding,
               disabledBackgroundColor: widget.disabledColor,
               disabledForegroundColor: widget.disabledTextColor,
+              splashFactory: NoSplash.splashFactory,
             ),
             clipBehavior: widget.clipBehavior,
             focusNode: widget.focusNode,
