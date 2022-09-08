@@ -173,7 +173,7 @@ class _ArgonButtonState extends State<ArgonButton>
         child: ElevatedButton(
             key: _buttonKey,
             style: ElevatedButton.styleFrom(
-              textStyle: TextStyle(color: widget.color),
+              backgroundColor: widget.color,
               elevation: widget.elevation,
               padding: widget.padding,
               disabledBackgroundColor: widget.disabledColor,
