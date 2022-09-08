@@ -167,6 +167,12 @@ class _ArgonButtonState extends State<ArgonButton> with TickerProviderStateMixin
               ? lerpDouble(widget.borderRadius, widget.height / 2, _animation.value)!
               : widget.borderRadius),
         ),
+        disabledColor: widget.disabledColor,
+        splashColor: widget.splashColor,
+        hoverColor: widget.hoverColor,
+        highlightColor: widget.highlightColor,
+        focusColor: widget.focusColor,
+        buttonColor: widget.color,
         child: ElevatedButton(
             key: _buttonKey,
             style: ElevatedButton.styleFrom(
@@ -391,6 +397,12 @@ class _ArgonTimerButtonState extends State<ArgonTimerButton> with TickerProvider
               ? lerpDouble(widget.borderRadius, widget.height / 2, _animation.value)!
               : widget.borderRadius),
         ),
+        disabledColor: widget.disabledColor,
+        splashColor: widget.splashColor,
+        hoverColor: widget.hoverColor,
+        highlightColor: widget.highlightColor,
+        focusColor: widget.focusColor,
+        buttonColor: widget.color,
         child: TextButton(
             style: TextButton.styleFrom(
               backgroundColor: widget.color,
